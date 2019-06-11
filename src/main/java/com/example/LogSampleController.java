@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class LogSampleController {
 
 	// ロガーを取得する。（引数にはこのロガーを使用するクラスのClassオブジェクトを渡す）
-	private static final Logger logger = LoggerFactory.getLogger(LogSampleController.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(LogSampleController.class);
 
 	/**
 	 * ロガーに含まれる各ログレベルのメソッドを呼ぶ.
@@ -32,11 +32,11 @@ public class LogSampleController {
 	 */
 	@RequestMapping("/loglevel")
 	public String logLevel() {
-		logger.error("エラーが発生しました");
-		logger.warn("警告です");
-		logger.info("情報です");
-		logger.debug("デバッグ情報です");
-		logger.trace("細かいトレース情報です");
+		LOGGER.error("エラーが発生しました");
+		LOGGER.warn("警告です");
+		LOGGER.info("情報です");
+		LOGGER.debug("デバッグ情報です");
+		LOGGER.trace("細かいトレース情報です");
 		return "finished-output-logs";
 	}
 

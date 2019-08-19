@@ -32,7 +32,6 @@ public class GlobalExceptionHandler implements HandlerExceptionResolver {
 			Object obj, 
 			Exception e) {
 		LOGGER.error("システムエラーが発生しました！", e);
-//		return new ModelAndView("error/500");
 		return null; // ←500エラーが発生したら自動的にerror/500.htmlに遷移してくれる
 	}
 }

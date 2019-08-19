@@ -1,4 +1,4 @@
-package com.example;
+package com.example.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,6 +39,26 @@ public class LogSampleController {
 		LOGGER.trace("細かいトレース情報です");
 		return "finished-output-logs";
 	}
+	
+	/**
+	 * 演習の解答例.
+	 * 
+	 * @return ログ出力完了画面
+	 */
+	@RequestMapping("/log")
+	public String log() {
+		LOGGER.info("log()メソッド開始！");
+		String strAge = "28";
+		LOGGER.debug("変数の中身" + strAge);
+		try {
+			int age = Integer.parseInt(strAge);	
+			LOGGER.info("あなたは" + age + "歳です");
+		}catch (Exception e) {
+			LOGGER.error("年齢が不正です");
+		}
+		LOGGER.info("log()メソッド終了！");
+		return "finished-output-logs";
+	}
 
 	/**
 	 * システム内で例外発生を行うメソッド.<br>
@@ -50,10 +70,10 @@ public class LogSampleController {
 	public String throwsException() {
 		// 0で除算、非検査例外であるArithmeticExceptionが発生！
 		System.out.println("例外発生前");
-		System.out.println(10 / 0);
+		System.out.println(10 / 0); // ←このタイミングでGlobalExceptionHandlerに処理が飛ぶ
 		System.out.println("例外発生後");
 
-		return "通常はここにJSP名を書くが、ここまで処理は来ない";
+		return "通常はここにHTML名を書くが、ここまで処理は来ない";
 	}
 
 	/**

@@ -3,6 +3,7 @@ package com.example.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -30,7 +31,7 @@ public class LogSampleController {
 	 * 
 	 * @return ログ出力完了画面
 	 */
-	@RequestMapping("/loglevel")
+	@GetMapping("/loglevel")
 	public String logLevel() {
 		LOGGER.error("エラーが発生しました");
 		LOGGER.warn("警告です");
@@ -45,7 +46,7 @@ public class LogSampleController {
 	 * 
 	 * @return ログ出力完了画面
 	 */
-	@RequestMapping("/log")
+	@GetMapping("/log")
 	public String log() {
 		LOGGER.info("log()メソッド開始！");
 		String strAge = "28";
@@ -66,7 +67,7 @@ public class LogSampleController {
 	 * 
 	 * @throws ArithmeticException このメソッドは必ずArithmeticExceptionを発生します
 	 */
-	@RequestMapping("/exception")
+	@GetMapping("/exception")
 	public String throwsException() {
 		// 0で除算、非検査例外であるArithmeticExceptionが発生！
 		System.out.println("例外発生前");
@@ -81,7 +82,7 @@ public class LogSampleController {
 	 * 
 	 * @throws ログイン画面
 	 */
-	@RequestMapping("/toLogin")
+	@GetMapping("/toLogin")
 	public String toLogin() {
 		return "login";
 	}

@@ -15,14 +15,14 @@
 		</filter>
 		<!-- メールサーバの情報。ドメイン名(or IPアドレス)、ポート番号、SSLを利用するかなど -->
 		<smtpHost>smtp.gmail.com</smtpHost>
-		<smtpPort>465</smtpPort>
-		<SSL>true</SSL>
-		<username>XXXX</username>	<!-- ←googleアカウントのメールアドレス -->
-		<password>XXXX</password>			<!-- ←アプリパスワード -->
+		<smtpPort>587</smtpPort>
+		<STARTTLS>true</STARTTLS>
+		<username>XXXX</username> <!-- ←googleアカウントのメールアドレス -->
+		<password>XXXX</password> <!-- ←アプリパスワード -->
 
 		<!-- メールの送り先、送り主、件名 -->
-		<to>XXXXX</to>				<!-- ←カンマ区切りにすると送信先を複数にできる -->
-		<from>xxxx@gmail.com</from>			<!-- ←gmailを使用する時はここは効かない -->
+		<to>XXXX@gmail.com</to>				<!-- ←カンマ区切りにすると送信先を複数にできる -->
+		<from>XXXX@gmail.com</from>			<!-- ←gmailを使用する時はここは効かない -->
 		<subject>Logback SMTPAppender Sample</subject>
 
 		<!-- メール本文のパターン設定 -->
